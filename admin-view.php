@@ -49,6 +49,8 @@ function wordpress_var_meta_box($post, $metabox){
 
 			    		if ($var["type"] == "textarea"){ ?>
 			    			<textarea name="<?php echo $name; ?>"<?php echo $style; ?>><?php echo $value; ?></textarea>
+			    		<?php } else if ($var["type"] == "checkbox"){ ?>
+				    		<input name="<?php echo $name; ?>" type="checkbox" value="1"<?php if ($value) echo ' checked="checked"'; ?>>
 			    		<?php } else { ?>
 				    		<input name="<?php echo $name; ?>" type="text" value="<?php echo $value; ?>"<?php echo $style; ?>>
 			    		<?php }

@@ -1,7 +1,7 @@
 wordpress-variables
 ===================
 
-A simple wordpress plugin to register variables and use them in your theme
+A simple wordpress plugin to register variables and use them in your theme.
 
 
 ### Installation
@@ -34,9 +34,12 @@ if (class_exists('WordpressVariables') && $wordpressVariables){
 }
 ```
 
+You can then set these variables in the new admin page, named "WP Variables" in the admin sidebar.
+
 
 ### Options
 - name: The variable name that will be displayed in the administration. If not set this will default to the object key.
+- type: Can be set to "textarea" or "checkbox". If not set this will defaults to a input text field.
 - key: If you wish to use a different key value for the db-option storage, you can overide it here.
 - help: Will display a help text next to the field in the administration.
 - width: The width of the admin field. You can use "smallest", "smaller", "small", "medium", "large", "larger", "largest" or any other value, i.e. "150px" or "50%". Defaults to "medium".

@@ -11,6 +11,8 @@ Version: 1.0
 Author URI: http://www.kloon.se
 */
 
+define("WORDPRESS_VARIABLES_PRE", "wordpress-variables-");
+
 class WordpressVariables {
 
     protected $pluginPath;
@@ -43,7 +45,7 @@ class WordpressVariables {
 	}
 
 	public function get_variable($key){
-		return get_option("wordpress-variables-". $key);
+		return get_option(WORDPRESS_VARIABLES_PRE . $key);
 	}
 
 
@@ -61,8 +63,14 @@ class WordpressVariables {
 		if ($this->is_action("update")){
 
 			foreach($this->vars as $var){
-	    		$val = stripslashes($_POST["wordpress-variables-". $var["key"]]);
-				update_option("wordpress-variables-". $var["key"], $val);
+				if ($var["type"] == "checkbox"){
+					$val = (isset($_POST[WORDPRESS_VARIABLES_PRE . $var["key"]]) && $_POST[WORDPRESS_VARIABLES_PRE . $var["key"]] == 1) ? 1 : 0;
+					update_option(WORDPRESS_VARIABLES_PRE . $var["key"], $val);
+
+				} else {
+		    		$val = stripslashes($_POST[WORDPRESS_VARIABLES_PRE . $var["key"]]);
+					update_option(WORDPRESS_VARIABLES_PRE . $var["key"], $val);
+				}
 			}
 		}
 
