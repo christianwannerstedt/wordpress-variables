@@ -15,8 +15,8 @@ A simple wordpress plugin to register variables and use them in your theme
 
 Add variables in your themes functions.php file:
 ```php
-if (class_exists('WordpressVariables') && $wpWordpressVariables){
-	$wpWordpressVariables->register_variables(array(
+if (class_exists('WordpressVariables') && $wordpressVariables){
+	$wordpressVariables->register_variables(array(
 		"color" => array(
 			"name" => "Background color",
 			"help" => "The background color of the sidebar"
