@@ -1,0 +1,40 @@
+@mixin clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.wordpress-variable-container {
+
+	li {
+		@include clearfix();
+		line-height: 22px;
+		padding: 10px 0;
+		border-bottom: 1px solid #ccc;
+
+		&:last-child {
+			border-bottom: 0;
+		}
+
+		label {
+			float: left;
+			width: 120px;
+		}
+		input, textarea {
+			float: left;
+			margin-left: 10px;
+		}
+		span {
+			float: left;
+			margin-left: 25px;
+			color: #aaa;
+		}
+	}
+
+}

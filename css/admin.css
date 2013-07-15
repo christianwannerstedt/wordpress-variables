@@ -1,0 +1,22 @@
+.wordpress-variable-container li {
+  *zoom: 1;
+  line-height: 22px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc; }
+  .wordpress-variable-container li:before, .wordpress-variable-container li:after {
+    display: table;
+    content: ""; }
+  .wordpress-variable-container li:after {
+    clear: both; }
+  .wordpress-variable-container li:last-child {
+    border-bottom: 0; }
+  .wordpress-variable-container li label {
+    float: left;
+    width: 120px; }
+  .wordpress-variable-container li input, .wordpress-variable-container li textarea {
+    float: left;
+    margin-left: 10px; }
+  .wordpress-variable-container li span {
+    float: left;
+    margin-left: 25px;
+    color: #aaa; }
